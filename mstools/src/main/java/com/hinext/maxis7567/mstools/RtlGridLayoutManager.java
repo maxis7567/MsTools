@@ -1,8 +1,9 @@
 package com.hinext.maxis7567.mstools;
 
 import android.content.Context;
-import androidx.recyclerview.widget.GridLayoutManager;
 import android.util.AttributeSet;
+
+import androidx.recyclerview.widget.GridLayoutManager;
 
 public class RtlGridLayoutManager extends GridLayoutManager {
     public RtlGridLayoutManager(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {

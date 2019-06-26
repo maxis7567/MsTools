@@ -14,12 +14,14 @@ public class JalaliCalendar {
      1461 = 365*4 + 4/4   &  146097 = 365*400 + 400/4 - 400/100 + 400/400
      12053 = 365*33 + 32/4    &    36524 = 365*100 + 100/4 - 100/100   */
 
-
-    public static String gregorian_to_jalali(String unixDate){
+    public static int TYPE_BOTH=1;
+    public static int TYPE_DATE=2;
+    public static int TYPE_TIME=3;
+    public static String gregorian_to_jalali(String unixDate,int type){
         int gy,gm,gd;
 
-        Date date = new java.util.Date(Long.valueOf(unixDate)*1000L);
-        SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyyMMdd HH:mm");
+        Date date = new Date(Long.valueOf(unixDate)*1000L);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm");
         sdf.setTimeZone(java.util.TimeZone.getTimeZone("GMT+3:30"));
         String formattedDate = sdf.format(date);
         gy=Integer.valueOf(formattedDate.substring(0,4));
@@ -57,10 +59,24 @@ public class JalaliCalendar {
         if (d.length()<2){
             d="0"+d;
         }
-        String tmp=formattedDate.substring(9);
-        formattedDate=y+"/"+m+"/"+d+" ";
-        formattedDate=formattedDate.concat(tmp);
-        return formattedDate;
+        switch (type){
+            case 1:
+
+                String tmp=formattedDate.substring(9);
+                formattedDate=y+"/"+m+"/"+d+" ";
+                formattedDate=formattedDate.concat(tmp);
+                return formattedDate;
+            case 2:
+                formattedDate=y+"/"+m+"/"+d+" ";
+                return formattedDate;
+            case 3:
+                SimpleDateFormat sdf1 = new SimpleDateFormat("HH:mm");
+                sdf1.setTimeZone(java.util.TimeZone.getTimeZone("GMT+3:30"));
+                return sdf1.format(date);
+
+
+        }
+return null;
     }
 
 

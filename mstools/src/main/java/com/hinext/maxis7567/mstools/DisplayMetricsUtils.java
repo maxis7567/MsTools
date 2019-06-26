@@ -4,10 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Point;
-import android.os.Build;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
-import android.view.WindowManager;
 
 public class DisplayMetricsUtils {
     private Context context;

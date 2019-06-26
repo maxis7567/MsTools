@@ -12,7 +12,7 @@ public class PostTimeCal {
         }else if(unix < 2592000){
             return (String.valueOf(unix/86400)+" روز پیش");
         }else {
-            return (JalaliCalendar.gregorian_to_jalali(String.valueOf(unix)).substring(0,11));
+            return (JalaliCalendar.gregorian_to_jalali(String.valueOf(unix),1).substring(0,11));
         }
     }
 }
