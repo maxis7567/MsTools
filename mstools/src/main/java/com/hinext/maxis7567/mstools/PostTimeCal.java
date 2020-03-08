@@ -4,15 +4,19 @@ public class PostTimeCal {
 
     public static String Calculator(long unix){
         if (unix<60){
-            return (String.valueOf(unix)+" ثانیه پیش");
+            return (unix +" ثانیه");
         }else if(unix < 3600){
-            return (String.valueOf(unix/60)+" دقیقه پیش");
+            return (unix / 60 +" دقیقه");
         }else if(unix < 86400){
-            return (String.valueOf(unix/3600)+" ساعت پیش");
-        }else if(unix < 2592000){
-            return (String.valueOf(unix/86400)+" روز پیش");
+            return (unix / 3600 +" ساعت");
+        }else if(unix < 604800){
+            return (unix / 86400 +" روز");
+        }else if (unix < 2592000){
+            return (unix / 604800 +" هفته");
+        }else if (unix < 31104000){
+            return (unix / 2592000 +" ماه");
         }else {
-            return (JalaliCalendar.gregorian_to_jalali(String.valueOf(unix),1).substring(0,11));
+            return (unix / 31104000 +" سال");
         }
     }
 }

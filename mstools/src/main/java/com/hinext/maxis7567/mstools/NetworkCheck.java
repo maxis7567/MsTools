@@ -6,6 +6,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 
+
 public class NetworkCheck {
 
         public static boolean isNetworkAvailable(Context context) {
@@ -16,11 +17,10 @@ public class NetworkCheck {
         }
     public static boolean isOnline() {
         try {
-            Process p1 = Runtime.getRuntime().exec("ping -c 1 www.google.com");
+            Process p1 = java.lang.Runtime.getRuntime().exec("ping -c 1 www.google.com");
             int returnVal = p1.waitFor();
             return (returnVal==0);
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return false;

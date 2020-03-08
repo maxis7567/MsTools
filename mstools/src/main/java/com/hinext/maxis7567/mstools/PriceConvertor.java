@@ -2,6 +2,8 @@ package com.hinext.maxis7567.mstools;
 
 import java.text.DecimalFormat;
 
+import static com.hinext.maxis7567.mstools.FaNumToEnNum.convertTofa;
+
 
 public class PriceConvertor {
     public static String Convert(long price){

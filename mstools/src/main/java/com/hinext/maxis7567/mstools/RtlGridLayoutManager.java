@@ -1,9 +1,10 @@
 package com.hinext.maxis7567.mstools;
 
 import android.content.Context;
-import android.util.AttributeSet;
-
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearSmoothScroller;
+
+import android.util.AttributeSet;
 
 public class RtlGridLayoutManager extends GridLayoutManager {
     public RtlGridLayoutManager(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
@@ -22,4 +23,5 @@ public class RtlGridLayoutManager extends GridLayoutManager {
     protected boolean isLayoutRTL(){
         return true;
     }
+
 }

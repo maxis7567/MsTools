@@ -20,8 +20,8 @@ public class JalaliCalendar {
     public static String gregorian_to_jalali(String unixDate,int type){
         int gy,gm,gd;
 
-        Date date = new Date(Long.valueOf(unixDate)*1000L);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm");
+        Date date = new java.util.Date(Long.valueOf(unixDate)*1000L);
+        SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyyMMdd HH:mm");
         sdf.setTimeZone(java.util.TimeZone.getTimeZone("GMT+3:30"));
         String formattedDate = sdf.format(date);
         gy=Integer.valueOf(formattedDate.substring(0,4));
@@ -67,10 +67,10 @@ public class JalaliCalendar {
                 formattedDate=formattedDate.concat(tmp);
                 return formattedDate;
             case 2:
-                formattedDate=y+"/"+m+"/"+d+" ";
+                formattedDate=y+"-"+m+"-"+d;
                 return formattedDate;
             case 3:
-                SimpleDateFormat sdf1 = new SimpleDateFormat("HH:mm");
+                SimpleDateFormat sdf1 = new java.text.SimpleDateFormat("HH:mm");
                 sdf1.setTimeZone(java.util.TimeZone.getTimeZone("GMT+3:30"));
                 return sdf1.format(date);
 

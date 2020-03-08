@@ -4,12 +4,12 @@ import android.os.CountDownTimer;
 
 public class CounterDown {
 
-    private com.hinext.maxis7567.mstools.ITimer ITimer;
+    private  ITimer ITimer;
 
     private CountDownTimer countDownTimer;
 
 
-    public CounterDown( com.hinext.maxis7567.mstools.ITimer ITimer) {
+    public CounterDown( ITimer ITimer) {
 
         this.ITimer = ITimer;
 
